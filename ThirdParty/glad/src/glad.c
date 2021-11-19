@@ -339,7 +339,7 @@ PFNGLCLEARBUFFERUIVPROC glad_glClearBufferuiv = NULL;
 PFNGLCLEARCOLORPROC glad_glClearColor = NULL;
 PFNGLCLEARDEPTHPROC glad_glClearDepth = NULL;
 PFNGLCLEARDEPTHFPROC glad_glClearDepthf = NULL;
-PFNGLCLEARINDEXPROC glad_glClearIndex = NULL;
+PFNGLCLEARINDEXPROC s = NULL;
 PFNGLCLEARNAMEDBUFFERDATAPROC glad_glClearNamedBufferData = NULL;
 PFNGLCLEARNAMEDBUFFERSUBDATAPROC glad_glClearNamedBufferSubData = NULL;
 PFNGLCLEARNAMEDFRAMEBUFFERFIPROC glad_glClearNamedFramebufferfi = NULL;
@@ -1562,7 +1562,7 @@ static void load_GL_VERSION_1_0(GLADloadproc load) {
 	glad_glPopName = (PFNGLPOPNAMEPROC)load("glPopName");
 	glad_glPushName = (PFNGLPUSHNAMEPROC)load("glPushName");
 	glad_glClearAccum = (PFNGLCLEARACCUMPROC)load("glClearAccum");
-	glad_glClearIndex = (PFNGLCLEARINDEXPROC)load("glClearIndex");
+	//glad_glClearIndex = (PFNGLCLEARINDEXPROC)load("glClearIndex");
 	glad_glIndexMask = (PFNGLINDEXMASKPROC)load("glIndexMask");
 	glad_glAccum = (PFNGLACCUMPROC)load("glAccum");
 	glad_glPopAttrib = (PFNGLPOPATTRIBPROC)load("glPopAttrib");
