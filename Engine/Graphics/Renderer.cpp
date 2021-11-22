@@ -35,7 +35,6 @@ void nc::Renderer::Create(const std::string& name, int width, int height)
 	if (window == nullptr) {
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
 		SDL_Quit();
-
 	}
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
@@ -52,13 +51,16 @@ void nc::Renderer::Create(const std::string& name, int width, int height)
 		SDL_Log("Failed to create OpenGL context");
 		exit(-1);
 	}
+
+	glEnable(GL_DEPTH_TEST);
+
 }
 
 void nc::Renderer::BeginFrame()
 {
 
 	glClearColor(0, 0, 0, 1);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void nc::Renderer::EndFrame()

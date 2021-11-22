@@ -110,6 +110,12 @@
     <ClCompile Include="..\ThirdParty\glad\src\glad.c">
       <Filter>Sources\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\VertexBuffer.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\VertexIndexBuffer.cpp">
+      <Filter>Sources\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\MathUtils.h">
@@ -206,6 +212,12 @@
       <Filter>Sources\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Graphics\Material.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\VertexBuffer.h">
+      <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\VertexIndexBuffer.h">
       <Filter>Sources\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
