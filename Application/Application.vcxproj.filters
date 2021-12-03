@@ -13,21 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource\Shaders">
+      <UniqueIdentifier>{6eb483e3-2494-4b3c-a053-44f32bb87895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Materials">
+      <UniqueIdentifier>{f8661f78-c0d5-4eb4-8080-fccc54763e66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\ThirdParty\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Build\resources\shaders\light.vert">
+      <Filter>Resource\Shaders</Filter>
+    </None>
     <None Include="..\Build\resources\shaders\basic.frag">
-      <Filter>Resource</Filter>
+      <Filter>Resource\Shaders</Filter>
     </None>
     <None Include="..\Build\resources\shaders\basic.vert">
-      <Filter>Resource</Filter>
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\light.frag">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\wood.mtl">
+      <Filter>Resource\Materials</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\light.shdr">
+      <Filter>Resource\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

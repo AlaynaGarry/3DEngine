@@ -7,7 +7,6 @@ namespace nc {
 	public:
 		AudioChannel() {}
 		AudioChannel(FMOD::Channel* channel) : channel{ channel } {}
-
 		bool IsPlaying();
 		void Stop();
 		void SetPitch(float pitch);
@@ -16,6 +15,6 @@ namespace nc {
 		float GetVolume();
 
 	private:
-		FMOD::Channel* channel;
+		FMOD::Channel* channel = nullptr;
 	};
 }

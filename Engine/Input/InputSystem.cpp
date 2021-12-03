@@ -10,6 +10,12 @@ void nc::InputSystem::Startup()
 	std::copy(keyboardStateSDL, keyboardStateSDL + numKeys, keyboardState.begin());
 	// set previous keyboard state to keyboard state
 	prevKeyboardState = keyboardState;
+
+	// set initial mouse position
+	int x, y;
+	Uint32 buttons = SDL_GetMouseState(&x, &y);
+	mousePosition = glm::vec2{ x , y };
+	prevMousePosition = mousePosition;
 }
 
 void nc::InputSystem::Shutdown()
@@ -18,19 +24,19 @@ void nc::InputSystem::Shutdown()
 
 void nc::InputSystem::Update(float dt)
 {
-
 	prevKeyboardState = keyboardState;
 	const Uint8* keyboardStateSDL = SDL_GetKeyboardState(nullptr); 
 	std::copy(keyboardStateSDL, keyboardStateSDL + numKeys, keyboardState.begin());
 
 	prevMouseButtonState = mouseButtonState;
+	prevMousePosition = mousePosition;
 	int x, y;
 	Uint32 buttons = SDL_GetMouseState(&x, &y);
 	mousePosition = glm::vec2{ x, y };
 	mouseButtonState[0] = buttons & SDL_BUTTON_LMASK;
 	mouseButtonState[1] = buttons & SDL_BUTTON_MMASK;
 	mouseButtonState[2] = buttons & SDL_BUTTON_RMASK;
-
+	mouseRelative = mousePosition - prevMousePosition;
 }
 
 nc::InputSystem::eKeyState nc::InputSystem::GetKeyState(int id)

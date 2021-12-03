@@ -2,7 +2,7 @@
 
 namespace nc {
 	void Engine::Startup() {
-		systems.push_back(std::make_unique<AudioSystem>());
+		//systems.push_back(std::make_unique<AudioSystem>());
 		systems.push_back(std::make_unique<Renderer>());
 		systems.push_back(std::make_unique<EventSystem>());
 		systems.push_back(std::make_unique<ResourceSystem>());
@@ -13,11 +13,12 @@ namespace nc {
 		REGISTER_CLASS(Actor)
 		REGISTER_CLASS(PhysicsComponent)
 		REGISTER_CLASS(AudioComponent)
+		REGISTER_CLASS(CameraComponent)
+		REGISTER_CLASS(MeshComponent)
+		REGISTER_CLASS(ModelComponent)
 
-		//ObjectFactory::Instance().Register<nc::SpriteComponent>("SpriteComponent");
-		//ObjectFactory::Instance().Register<nc::SpriteAnimationComponent>("SpriteAnimationComponent");
-		//ObjectFactory::Instance().Register<nc::PhysicsComponent>("PhysicsComponent");
-
+		REGISTER_CLASS(FreeCameraController)
+		REGISTER_CLASS(LightComponent)
 	}
 	void Engine::Shutdown() {
 		std::for_each(systems.begin(), systems.end(), [](auto& system) {system->Shutdown(); });

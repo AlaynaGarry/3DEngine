@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "Scene.h"
 #include "Component/Component.h"
 #include "Math/Transform.h"
 #include "Core/Serializable.h"
@@ -9,6 +10,7 @@
 
 namespace nc {
 	class Scene;
+	class Texture;
 	class Renderer;
 
 	class Actor : public Object, public ISserializable{

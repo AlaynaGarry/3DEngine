@@ -1,6 +1,7 @@
 #include "AudioChannel.h"
 
 namespace nc {
+
 	bool AudioChannel::IsPlaying()
 	{
 		if (channel == nullptr) return false;

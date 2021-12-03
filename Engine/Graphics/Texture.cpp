@@ -18,7 +18,16 @@ namespace nc
         target = target;
         unit = unit;
 
+        //PROBLEM
+        //RIGHT HERE
+        //THIS ONE 
         SDL_Surface* surface = IMG_Load(filename.c_str());
+        //^
+        //|
+        //tHat oNe
+
+
+        //too far
         FlipSurface(surface);
 
         if (surface == nullptr)

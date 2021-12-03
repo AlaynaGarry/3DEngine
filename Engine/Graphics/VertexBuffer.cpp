@@ -2,6 +2,12 @@
 
 namespace nc
 {
+	VertexBuffer::VertexBuffer()
+	{
+		glGenVertexArrays(1, &vao);
+		glBindVertexArray(vao);
+	}
+
 	VertexBuffer::~VertexBuffer()
 	{
 		//<if vao is not 0 then glDeleteVertexArrays>
@@ -12,17 +18,25 @@ namespace nc
 		if (vbo != 0) {
 			glDeleteBuffers;
 		}
+		if (ibo) glDeleteBuffers(1, &ibo);
 	}
 
 	bool VertexBuffer::Load(const std::string& name, void* null)
 	{
-		//<glGenVertexArrays with vao>
-		glGenVertexArrays(1, &vao);
-		//<glBindVertexArray vao>
-		glBindVertexArray(vao);
-
 		return true;
 	}
+
+	void VertexBuffer::CreateIndexBuffer(GLenum indexType, GLsizei indexCount, void* data)
+	{
+		this->indexType = indexType;
+		this->indexCount = indexCount;
+
+		glGenBuffers(1, &ibo);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+		size_t indexSize = (indexType == GL_UNSIGNED_SHORT) ? sizeof(GLushort) : sizeof(GLuint);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * indexSize, data, GL_STATIC_DRAW);
+	}
+
 
 	void VertexBuffer::CreateVertexBuffer(GLsizei size, GLsizei vertexCount, void* data)
 	{
@@ -44,9 +58,14 @@ namespace nc
 
 	void VertexBuffer::Draw(GLenum primitiveType)
 	{
-		//<glBindVertexArray vao>
 		glBindVertexArray(vao);
-		//<glDrawArrays use vertex count>
-		glDrawArrays(primitiveType, 0, vertexCount);
+		if (ibo)
+		{
+			glDrawElements(primitiveType, indexCount, indexType, 0);
+		}
+		else if (vbo)
+		{
+			glDrawArrays(primitiveType, 0, vertexCount);
+		}
 	}
 }

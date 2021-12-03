@@ -47,9 +47,6 @@
     <ClCompile Include="Math\Random.cpp">
       <Filter>Sources\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Math\Transform.cpp">
-      <Filter>Sources\Math</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Actor.cpp">
       <Filter>Sources\Object</Filter>
     </ClCompile>
@@ -113,8 +110,26 @@
     <ClCompile Include="Graphics\VertexBuffer.cpp">
       <Filter>Sources\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\VertexIndexBuffer.cpp">
+    <ClCompile Include="Component\CameraComponent.cpp">
+      <Filter>Sources\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\MeshComponent.cpp">
+      <Filter>Sources\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Transform.cpp">
+      <Filter>Sources\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\FreeCameraController.cpp">
+      <Filter>Sources\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Model.cpp">
       <Filter>Sources\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\ModelComponent.cpp">
+      <Filter>Sources\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\LightComponent.cpp">
+      <Filter>Sources\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +137,6 @@
       <Filter>Sources\Math</Filter>
     </ClInclude>
     <ClInclude Include="Math\Random.h">
-      <Filter>Sources\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Transform.h">
       <Filter>Sources\Math</Filter>
     </ClInclude>
     <ClInclude Include="Object\Actor.h">
@@ -217,8 +229,26 @@
     <ClInclude Include="Graphics\VertexBuffer.h">
       <Filter>Sources\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\VertexIndexBuffer.h">
+    <ClInclude Include="Component\CameraComponent.h">
+      <Filter>Sources\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\MeshComponent.h">
+      <Filter>Sources\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Transform.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\FreeCameraController.h">
+      <Filter>Sources\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Model.h">
       <Filter>Sources\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\ModelComponent.h">
+      <Filter>Sources\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\LightComponent.h">
+      <Filter>Sources\Component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
