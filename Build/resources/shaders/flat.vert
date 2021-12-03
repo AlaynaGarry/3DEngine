@@ -3,13 +3,14 @@ layout(location = 0) in vec3 position;
 layout(location = 1) in vec3 normal;
 layout(location = 2) in vec2 texcoord;
 
-out vec3 fs_color;
+flat out vec3 fs_color;
 out vec2 fs_texcoord;
 
 struct Material{
 	vec3 ambient;
 	vec3 diffuse;
 	vec3 specular;
+	float shininess;
 };
 
 struct Light{
@@ -46,7 +47,7 @@ void main()
 		vec3 view_dir = normalize(-vec3(position));
 		vec3 reflection = reflect(-light_dir, vnormal);
         intensity = max(dot(view_dir, reflection), 0);
-        intensity = pow(intensity, 64);
+        intensity = pow(intensity, material.shininess);
         specular = material.specular * light.specular * intensity;
 	}
 
